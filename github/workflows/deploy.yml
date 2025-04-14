@@ -1,0 +1,25 @@
+name: Deploy to Google Cloud
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v0
+        with:
+          workload_identity_provider: 'projects/<steam-cache-456414-t3>/locations/global/workloadIdentityPools/<Michal_Lesniewski>/providers/<PROVIDER_ID>'
+          service_account: '<481346028468-compute@developer.gserviceaccount.com>'
+      - name: Run deployment script
+        run: |
+          # Your deployment commands here
