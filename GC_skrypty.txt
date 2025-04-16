@@ -1,0 +1,115 @@
+
+gcloud config set project steam-cache-456414-t3
+
+
+gcloud config set account 481346028468-compute@developer.gserviceaccount.com
+
+gcloud compute ssh instance-20250411-143043
+
+
+gcloud config set project [PROJECT_ID]
+
+
+streamlit run max26.py --server.port 8501 --server.enableCORS false --server.enableXsrfProtection false
+
+scp /ścieżka/do/pliku/max26.py michal_a_lesniewski@instance-20250411-143043:~/merid2/
+
+"C:\Users\milesnie\OneDrive - Capgemini\Desktop\Meridian_files\merid0425\max26.py"
+
+gsutil cp gs://meridian_files/max26.py ~/merid2
+gsutil cp gs://meridian_files/max26_func.py ~/merid2
+gsutil cp gs://meridian_files/max26_opti_func.py ~/merid2
+gsutil cp gs://meridian_files/mmm_dump.pkl ~/merid2
+
+
+
+pip install streamlit numpy pandas plotly tensorflow tensorflow-probability arviz ipython
+
+Project Name: Meridian demo april25
+Project ID: meridian-demo-april25
+Project number: 739281735938
+
+739281735938-compute@developer.gserviceaccount.com
+
+Instancja
+((mlenv) ) michal_a_lesniewski@instance-20250414-114807:
+Skrypt
+Tab_preparation.py
+
+
+
+gcloud config set account 739281735938-compute@developer.gserviceaccount.com
+
+gcloud config set project meridian-demo-april25
+
+logowanie do VM
+gcloud compute ssh instance-20250414-114807    --zone=us-central1-c
+ssh michal_a_lesniewski@instance-20250414-114807
+gcloud compute ssh michal_a_lesniewski@instance-20250414-114807
+
+
+
+
+pip install streamlit numpy pandas plotly tensorflow tensorflow-probability arviz ipython google-meridian
+
+python3.12 -m venv mlenv
+
+Aktywacja maszyny env 
+
+source mlenv/bin/activate
+
+
+gsutil cp gs://merid_files/max26.py .
+
+gsutil cp gs://merid_files/max27.py .
+
+gsutil cp gs://merid_files/max28.py .
+
+
+gsutil cp gs://merid_files/max26_func.py .
+gsutil cp gs://merid_files/max26_opti_func.py .
+
+gsutil cp gs://merid_files/Tab_preparation.py .
+
+gsutil cp gs://merid_files/tab_preparation.yaml .
+
+
+gsutil cp gs://merid_files/Cap_logo.png .
+
+Tak się uruchamia yamla
+
+kubectl apply -f /home/michal_a_lesniewski/tab_preparation.yaml
+
+
+
+
+
+włączanie automatyczne
+nohup streamlit run max27.py &
+
+tak się ogląda proces w chmurze
+top -> tak się ogląda logi
+
+Tak się znajduje proces
+ps aux | grep streamlit
+
+tak się wyłącza
+kill 95168
+
+gsutil cp gs://merid_files/*6*.py .
+
+gsutil cp gs://merid_files/*7*.py .
+
+gsutil cp gs://merid_files/*.pkl .
+
+
+
+ls /home/michal_a_lesniewski/mlenv/mmm_dump.pkl
+ls -la /home/michal_a_lesniewski/mlenv/include /bin   /activate
+
+ls /home/michal_a_lesniewski/instance-20250414-114807/mlenv/
+
+
+
+python3 -c "import tensorflow as tf; print(tf.__version__)"
+

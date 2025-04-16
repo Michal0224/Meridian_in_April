@@ -1,3 +1,8 @@
+## specyficzne ustawienia dla google cloud
+import os
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+import tensorflow as tf
+
 import streamlit as st
 import os
 import numpy as np
@@ -6,7 +11,6 @@ import plotly.express as px
 import plotly.figure_factory as ff
 import plotly.graph_objects as go
 
-import tensorflow as tf
 import tensorflow_probability as tfp
 import arviz as az
 
@@ -394,14 +398,14 @@ def cont_chart(co_data):
         ),
         xaxis=dict(
             title="ROI",  # Tytuł osi X
-            titlefont=dict(size=14, family="Roboto", color="#5F6368"),
+            tickfont=dict(size=14, family="Roboto", color="#5F6368"),
             gridcolor="lightgrey",  # Kolor siatki
             griddash="dash",  # Linia przerywana
             zeroline=False
         ),
         yaxis=dict(
             title="Effectiveness",  # Tytuł osi Y
-            titlefont=dict(size=14, family="Roboto", color="#5F6368"),
+            tickfont=dict(size=14, family="Roboto", color="#5F6368"),
             gridcolor="lightgrey",
             griddash="dash",
             zeroline=False
@@ -443,7 +447,7 @@ def response_hill_chart(res_hi):
         ),
         xaxis=dict(
             title="Media Spent",  # Tytuł osi X
-            titlefont=dict(size=14, family="Roboto", color="#5F6368"),
+            tickfont=dict(size=14, family="Roboto", color="#5F6368"),
             gridcolor="lightgrey",  # Kolor poziomej siatki
             griddash="dash",  # Linia przerywana dla osi X
             zeroline=False,
@@ -451,7 +455,7 @@ def response_hill_chart(res_hi):
         ),
         yaxis=dict(
             title="Mean Value",  # Tytuł osi Y
-            titlefont=dict(size=14, family="Roboto", color="#5F6368"),
+            tickfont=dict(size=14, family="Roboto", color="#5F6368"),
             gridcolor="lightgrey",  # Kolor pionowej siatki
             griddash="dash",  # Linia przerywana dla osi Y
             zeroline=False,

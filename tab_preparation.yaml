@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tab-preparation-pod
+spec:
+  containers:
+  - name: tab-preparation-container
+    image: python:3.12
+    command: ["python"]
+    args: ["/home/michal_a_lesniewski/Tab_preparation.py"]
+    volumeMounts:
+    - name: script-volume
+      mountPath: /home/michal_a_lesniewski
+  volumes:
+  - name: script-volume
+    hostPath:
+      path: /home/michal_a_lesniewski
+      type: Directory

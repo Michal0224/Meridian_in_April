@@ -1,5 +1,12 @@
-import streamlit as st
+
+## specyficzne ustawienia dla google cloud
 import os
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+
+import tensorflow as tf
+
+import streamlit as st
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -12,7 +19,8 @@ import max26_func
 import max26_opti_func
 
 # Data source
-file_path = r"C:\Users\micha\Desktop\Models\3M\Meridian_files\mmm_dump.pkl"
+
+file_path = "/home/michal_a_lesniewski/mmm_dump.pkl"
 with open(file_path, 'rb') as file:
     mmm = pkl.load(file)
 
@@ -22,7 +30,7 @@ st.set_page_config(layout="wide")
 col1, col2 = st.columns([2, 1])  # Adjust the proportions as needed
 
 with col2:  # Right column
-    st.image(r"C:\Users\micha\Downloads\Cap_logo.png", width=350)
+    st.image("/home/michal_a_lesniewski/Cap_logo.png", width=350)
     
 with col1:  # Left column
     # Custom style for the header
@@ -30,7 +38,7 @@ with col1:  # Left column
     
 
 # Styl zakładki bocznej
-st.html("""<style>[data-testid="stSidebarContent"] {color: black; background-color: #30B700} </style>""")
+st.html("""<style>[data-testid="stSidebarContent"] {color: black; background-color: #0072AF} </style>""")
 st.sidebar.subheader('Configuration parameters', divider="grey") 
 # definicja kontentu strony
 show_results = st.sidebar.checkbox('Model Results Summary', value=True)
@@ -116,7 +124,8 @@ if show_opti:
         st.markdown("<br>", unsafe_allow_html=True)
         st.write('**Optimized budget allocation**')
         st.markdown("<br><br>", unsafe_allow_html=True)
-        opti_budget_tab(mmm)
+        #opti_budget_tab(mmm)
+        st.dataframe(opti_budget_tab(mmm)) #, use_container_width=True
         st.markdown("<br><br><br><br><br>", unsafe_allow_html=True)
         inc_reve = incremental_reve()
         incremental_reve_chart(inc_reve)
